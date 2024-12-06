@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Movies</title>
+<style>
+body{
+background-color:rgb(213, 134, 134);
+color:white;
+font-size:20px;
+}
+h2{
+text-align:center;
+}
+	table{
+	margin:auto;
+	}
+</style>
+</head>
+<body>
+<h2>View All Movies Here</h2>
+	<table border="1">
+	<thead>
+	<tr>
+		<td>ID</td>
+		<td>Name</td>
+		<td>Link</td>
+		<td>Genre</td>
+		<td>Cast</td>
+		<td>Director</td>
+	</tr>
+	</thead>
+	<tbody>
+		<tr th:each="movie:${movie}">
+			<td th:text="${movie.id}"></td>
+			<td th:text="${movie.movieName}"></td>
+			<td th:utext="${movie.movieLink}"></td>
+			<td th:text="${movie.movieGenre}"></td>
+			<td th:text="${movie.movieCast}"></td>
+			<td th:text="${movie.movieDirector}"></td>
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Success</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        background-image: url(/adminimage/regsucc3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center;
+        height: 83vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .success-container {
+        background-color: #fafafa;
+        padding: 20px;
+        width: 500px;
+        height: 230px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 1s forwards;
+      }
+      .success-container h1 {
+        color: #4caf50;
+      }
+      .success-container p {
+        color: #0a0909;
+      }
+      .success-container a {
+        color: #4caf50;
+        text-decoration: none;
+        margin-top: 70px;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-container">
+      <form>
+        <h1>Registration Successful</h1>
+        <p>
+          Thank you for registering! Your account has been created successfully.
+        </p>
+        <a href="" style="margin-top: 40px">Go to Login Page</a>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Insert title here</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(226, 234, 234);
+      background-image: url(/adminimage/viewuser1.jpg);
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+    .container {
+      padding-left: 45%;
+      height: 150px;
+      margin-top: 50px;
+    }
+
+    .container table thead {
+      height: 50px;
+      width: 70px;
+    }
+    .container table tbody {
+      height: 30px;
+    }
+  </style>
+  <body>
+    <h2>All Users</h2>
+    <div class="container">
+      <table border="1">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Gender</td>
+            <td>Address</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="user:${user}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.phone}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.address}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Update User</title>
+  </head>
+  <style>
+    body {
+      background-image: url(/adminimage/upd1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+    }
+    .container {
+      text-align: center;
+      margin-left: 25%;
+      padding: 50px;
+      width: 50%;
+      border-radius: 20px;
+      color: white;
+    }
+    label {
+      width: 100px;
+      display: inline-block;
+      font-size: 18px;
+    }
+    .input-box {
+      padding-top: 20px;
+    }
+    .input-box input {
+      border-radius: 25px;
+      border: 1px solid white;
+    }
+    .btn {
+      border-radius: 25px;
+      border: 1px solid black;
+      width: 18%;
+      height: 25px;
+      background-color: rgb(128, 239, 128);
+      cursor: pointer;
+      font-size: 15px;
+      font-family: sans-serif;
+      color: black;
+    }
+    .btn:hover {
+      background-color: lightcoral;
+      transition: 1s;
+      height: 30px;
+    }
+    textarea {
+      border-radius: 15px;
+    }
+    input {
+      margin-left: 10px;
+      background: transparent;
+      color: white;
+    }
+    .gd {
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <h2>Enter the details to be Updated</h2>
+    <div class="container">
+      <form action="updateUser" method="post">
+        <div class="input-box">
+          <label>Id</label>
+          <input type="number" name="id" required />
+        </div>
+        <div class="input-box">
+          <label>Name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="input-box">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="input-box">
+          <label>Password</label>
+          <input type="password" name="password" required />
+        </div>
+
+        <div class="input-box">
+          <label>Phone</label>
+          <input type="number" name="phone" required />
+        </div>
+        <div class="gd">
+          <label>Gender</label> <br />
+          <br />
+          <input type="radio" name="gender" value="male" />&nbsp;&nbsp;Male
+          <input
+            class="radiobt"
+            type="radio"
+            name="gender"
+            value="female"
+          />&nbsp;&nbsp;Female
+          <input
+            class="radiobt"
+            type="radio"
+            name="gender"
+            value="other"
+          />&nbsp;&nbsp;Other
+        </div>
+        <br />
+        <div>
+          <label>Address</label> <br />
+          <br />
+          <textarea rows="3" cols="25" name="address"></textarea>
+        </div>
+        <br />
+        <input class="btn" type="submit" value="UPDATE" />
+      </form>
+    </div>
+  </body>
+</html>

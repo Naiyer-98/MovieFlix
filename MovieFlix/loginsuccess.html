@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Success</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        background-image: url(loginsuccess.png);
+        background-size: cover;
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center;
+        height: 83vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+      .success-container {
+        background-color: #ffffff;
+        width: 450px;
+        height: 230px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 17%;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 2s forwards;
+      }
+      .success-container h1 {
+        color: #4caf50;
+        margin-top: 55px;
+      }
+      .success-container p {
+        color: #333;
+      }
+      .success-container a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 3;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="success-container" action="loginsuccess" method="post">
+        <h1>Login Successful</h1>
+        <p>Welcome back! You have successfully logged in.</p>
+        <a href="">Go to Admin Page</a>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieFlix Payment</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+      /* Add some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(/adminimage/pay3.jpeg);
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+      }
+      .container {
+        text-align: center;
+        background: #fff;
+        height: 300px;
+        width: 500px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 2s forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 3;
+          transform: translateY(0);
+        }
+      }
+      .btn {
+        background-color: #6772e5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 60px;
+      }
+      p {
+        margin-top: 60px;
+        font-size: 18px;
+        }
+      </style>
+    </head>
+    <body>
+      <form id="payment-form">
+      <div class="container">
+        <h1>Subscribe to MovieFlix</h1>
+        <p>Watch unlimited movies and TV shows.</p>
+        <button type="submit" class="buy-button" class="btn">
+          Subscribe for $1.19/month
+        </button>
+      </div>
+    </form>
+    <script type="text/javascript">
+      // Your Stripe public key
+      var stripe = Stripe("your-publishable-key-here");
+
+      document
+        .getElementById("checkout-button")
+        .addEventListener("click", function () {
+          // Create a new Checkout Session using the server-side endpoint you
+          // created in step 3.
+          fetch("/create-checkout-session", {
+            method: "POST",
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (sessionId) {
+              return stripe.redirectToCheckout({ sessionId: sessionId });
+            })
+            .then(function (result) {
+              // If redirectToCheckout fails due to a browser or network
+              // error, display the localized error message to your customer
+              // using result.error.message.
+              if (result.error) {
+                alert(result.error.message);
+              }
+            })
+            .catch(function (error) {
+              console.error("Error:", error);
+            });
+        });
+    </script>
+  </body>
+</html>

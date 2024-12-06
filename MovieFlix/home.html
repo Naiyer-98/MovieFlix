@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>MovieFlix</title>
+  </head>
+  <style>
+    body {
+      background-image: url(/adminimage/h3.jpg);
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(214, 9, 9);
+      font-size: 70px;
+    }
+    .p {
+      text-align: center;
+      margin-top: 200px;
+    }
+    .p h3 {
+      font-size: 50px;
+      color: white;
+    }
+    .p p {
+      font-size: 30px;
+      color: white;
+    }
+    .container {
+      display: flex;
+      margin-top: 150px;
+      padding-left: 90px;
+    }
+    form input {
+      height: 40px;
+      width: 120px;
+      border-radius: 30px;
+      background-color: rgb(214, 9, 9);
+      color: white;
+      border-color: transparent;
+      font-size: 15px;
+      margin-left: 290px;
+    }
+    form input:hover {
+      cursor: pointer;
+      height: 60px;
+      transition: 1s;
+      font-size: 16px;
+    }
+  </style>
+  <body>
+    <h2>MovieFlix</h2>
+
+    <div class="p">
+      <h3>See what's next</h3>
+      <p>WATCH ANYWHERE CANCEL ANYTIME</p>
+    </div>
+
+    <div class="container">
+      <form action="exploremovies">
+        <input type="submit" value="Explore Movies" />
+      </form>
+      <br /><br />
+
+      <form action="updateuser">
+        <input type="submit" value="Update Profile" />
+      </form>
+      <br /><br />
+
+      <form action="logout">
+        <input type="submit" value="Logout" />
+      </form>
+    </div>
+  </body>
+</html>

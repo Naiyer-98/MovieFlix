@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Failed</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url(regfail1.avif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 83vh;
+      }
+      .failure-container {
+        background-color: #fff;
+        padding: 20px;
+        height: 250px;
+        width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        opacity: 0; /* Start with the container hidden */
+        transform: translateY(
+          -20px
+        ); /* Start with the container slightly above its final position */
+        animation: fadeIn 1s forwards; /* Animation name, duration, and set to run forwards */
+      }
+      .failure-container h1 {
+        color: #f44336;
+        margin-top: 60px;
+      }
+      .failure-container p {
+        color: #333;
+      }
+      .failure-container a {
+        color: #f44336;
+        text-decoration: none;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="failure-container">
+      <h1>Registration Failed</h1>
+      <p>
+        Unfortunately, your registration was unsuccessful. Please try again.
+      </p>
+      <a href="registration.html">Go back to Registration</a>
+    </div>
+  </body>
+</html>
